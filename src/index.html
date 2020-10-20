@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hangman Game</title>
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="src/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="src/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="src/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="src/assets/favicon/site.webmanifest">
+  <link rel="mask-icon" href="src/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <!-- 
+    Inknut Antiqua
+      Regular: 400
+      Bold: 700
+    Roboto
+      Regular: 400
+      Medium: 500
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">  
+
+  <!-- Styles -->
+  <!-- <link href="dist/styles/index.css" rel="stylesheet"> -->
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5e965261f7.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <a href="https://github.com/JacekGrochowina/Hangman-Game" target="_blank" class="github"><i class="fab fa-github"></i></a>
+
+  <!-- MAIN GAME - START -->
+  <div class="game">
+
+    <!----------------------->
+    <!-- Dashboard - start -->
+    <!----------------------->
+    <button class="game__toggler-btn game__open-btn" id="js-dashboard-open">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="game__dashboard hidden" id="js-dashboard">
+      <button class="game__toggler-btn game__close-btn" id="js-dashboard-close">
+        <i class="far fa-times-circle"></i>
+      </button>
+      <div class="game__score">
+        <h3 class="game__title normal border">Osiągnięcia</h3>
+        <ul class="game__list">
+          <li class="game__item"><i class="item__icon fas fa-coins"></i>Saldo: <span class="item__span" id="js-wallet">0</span></li>
+          <li class="game__item"><i class="item__icon fas fa-heart"></i>Ocalonych: <span class="item__span" id="js-number-survived">0</span></li>
+          <li class="game__item"><i class="item__icon fas fa-skull"></i>Straconych: <span class="item__span" id="js-number-died">0</span></li>
+        </ul>
+      </div>
+      <div class="game__settings">
+        <h3 class="game__title normal border">Ustawienia</h3>
+        <ul class="game__list">
+          <li class="game__item"><i class="item__icon fas fa-music"></i>Muzyka: <span class="item__span"><button class="item__btn" id="js-toggle-sound"><i class="btn__icon fas fa-volume-up"></i><!--i class="btn__icon fas fa-volume-mute"></i--></button></span></li>
+          <li class="game__item"><i class="item__icon fas fa-chart-line"></i>Postęp: <span class="item__span"><button class="item__btn" id="js-clear-local-storage"><i class="btn__icon fas fa-broom"></i></button></span></li>
+        </ul>
+      </div>
+    </div>
+    <!--- Dashboard - end --->
+    
+    
+    <!----------------------->
+    <!---- Game - start ----->
+    <!----------------------->
+    <div class="game__container">
+      <div class="game__layers">
+        
+        <!-- Start Screen -->
+        <div class="game__layer layer__start-screen " id="js-start-screen">
+          <div class="container">
+            <svg class="game__logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 897 430">
+              <defs>
+                <clipPath id="clip-path">
+                  <rect id="Rectangle_1" data-name="Rectangle 1" width="441" height="430" transform="translate(0 0)" fill="#fff"/>
+                </clipPath>
+              </defs>
+              <g id="LOGO" transform="translate(-717 -147)">
+                <text id="Hangman" transform="translate(880 396)" fill="#1d1d1d" font-size="138" font-family="InknutAntiqua-Regular, Inknut Antiqua"><tspan x="0" y="0">Hangman</tspan></text>
+                <g id="hangman-2" data-name="hangman" transform="translate(717 147)" clip-path="url(#clip-path)">
+                  <path id="step3" d="M60.376,30.038A39.766,39.766,0,0,1,56.5,35.852l100.128-5.814-53.617,82.04v12.274c8.183-10.228,29.457-36.434,49.1-59.431s41.989-35.206,50.71-38.436L327.169,22.61A36.963,36.963,0,0,1,325.231,12.6,39.289,39.289,0,0,1,327.169,0,168.287,168.287,0,0,1,302.3,4.845c-11.111,1.292-44.25,3.553-59.431,4.522L61.668,22.61C61.668,24.225,61.41,27.971,60.376,30.038Z" transform="translate(-20.002 -0.329)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+                  <path id="step2" d="M103.153,427.37H87.65v-133.4c0-22.61-4.2-176.355-6.46-217.375-1.809-32.816-7.214-53.725-9.69-60.077a161.6,161.6,0,0,0,19.057,0c7.235-.517,17.657-3.23,21.964-4.522-1.615,78.7-5.1,245.282-6.137,281.974S103.8,398.193,103.153,427.37Z" transform="translate(-25.312 -4.577)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+                  <path id="step1" d="M10.659,645.274C10.4,641.4,3.445,635.476,0,633c16.15,1.83,55.232,5.685,82.364,6.46s62.553-2.476,76.873-4.2c-.646.861-3.036,3.747-7.429,8.4s-1.83,9.259,0,10.982H6.137C7.752,653.134,10.917,649.15,10.659,645.274Z" transform="translate(0 -224.419)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+                </g>
+              </g>
+            </svg>
+            <button class="game__btn mt-5" id="js-start-game-btn">Zacznij grę</button>
+          </div>
+        </div>
+
+
+        <!-- Game Screen -->
+        <div class="game__layer layer__game-screen hidden" id="js-game-screen">
+          <div class="container">
+            <!-- Hangman Info -->
+            <div class="game__hangman">
+              <div class="game__svg">
+                <svg id="hangman" viewBox="0 0 681 667" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g clip-path="url(#clip0)">
+                      <path id="step1-shadow" class="path" path-shadow d="M241.5 660C236.7 661.6 235.667 665.5 235.5 666.5H44V657.5H230.5H250.5C249.667 657.667 246.3 658.4 241.5 660Z" fill="#BFBFBF" stroke="#BFBFBF" stroke-linejoin="round"/>
+                      <path id="step2-shadow" class="path" path-shadow d="M339.5 436.5L280 440C277.333 446.167 269.5 462 259.5 476C247 493.5 229.5 515 208.5 540.5C191.7 560.9 136.5 621.667 111 649.5H135.5C141.667 643.5 160 625.2 184 600C208 574.8 297.667 480.5 339.5 436.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step3-shadow" class="path" path-shadow d="M259 457.5L271 443.5L356 441L681 434.5C680.5 435.667 679 438.6 677 441C675 443.4 668.833 447 666 448.5L435.5 453.5C415.167 459.667 369.4 473.5 349 479.5C328.6 485.5 288.5 496.667 271 501.5L282 488.5C292.333 486 316.7 479.8 331.5 475C346.3 470.2 377.333 457 391 451L259 457.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step4-shadow" class="path" path-shadow d="M586.5 522.5C565 522.5 554.5 513.5 558 503C561.5 492.5 581 485.281 598.5 482C616 478.719 646.5 477 661.5 484.5C676.5 492 665.5 506 645.5 513.5C625.5 521 613.312 522.5 586.5 522.5Z" fill="#BFBFBF" stroke="#BFBFBF" stroke-width="10"/>
+                      <path id="step5-shadow" class="path" path-shadow d="M537.5 573.5L580 527.5H600L566.5 576L537.5 573.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step6-shadow" class="path" path-shadow d="M571.5 605.5C567.9 600.7 561.667 582.5 559 574L574 561C575 565.833 577.9 578 581.5 588C585.1 598 595.333 607.833 600 611.5L580 618.5C578.667 616.167 575.1 610.3 571.5 605.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step7-shadow" class="path" path-shadow d="M478 590.5C495.6 585.7 529.667 572.833 544.5 567L543 574C537.333 576.333 521.2 582.6 502 589C482.8 595.4 438.333 610.667 418.5 617.5C418 616.833 417 615 417 613C417 611 418 607.5 418.5 606C431 602.833 460.4 595.3 478 590.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step8-shadow" class="path" path-shadow d="M624.5 547C612 542 604.5 538.5 594.5 533.5L599 526.5C605.833 528.833 621.8 534.4 631 538C640.2 541.6 665.5 548.167 677 551L662.5 559C654.167 557.167 637 552 624.5 547Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step9-shadow" class="path" path-shadow d="M519.5 539.5C533.5 537.5 560.167 534 577.5 531L583.5 523.5C583.5 523.5 538.5 531.333 518 534C492.661 537.297 453 540.5 453 540.5C451.5 544.5 453.5 548.5 458 548.5C473.167 546.5 505.5 541.5 519.5 539.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+                      <path id="step10-shadow" class="path" path-shadow d="M638.5 461.5C636.5 464.7 627.667 471.833 623.5 475L645.5 476.5C645 474.667 644.8 469.3 648 462.5C651.2 455.7 660.667 450 665.5 448H648C645.667 451.167 640.5 458.3 638.5 461.5Z" fill="#BFBFBF" stroke="#BFBFBF"/>
+          
+                      <path id="step1" class="path" path d="M16.5 652C16.1 646 5.33333 636.833 0 633C25 635.833 85.5 641.8 127.5 643C169.5 644.2 224.333 639.167 246.5 636.5C245.5 637.833 241.8 642.3 235 649.5C228.2 656.7 232.167 663.833 235 666.5H9.5C12 664.167 16.9 658 16.5 652Z" fill="black" stroke="black"/>
+                      <path id="step2" class="path" path d="M120.5 655H96.5V448.5C96.5 413.5 90 175.5 86.5 112C83.7 61.2 75.3333 28.8333 71.5 19C76.6667 19.3333 89.8 19.8 101 19C112.2 18.2 128.333 14 135 12C132.5 133.833 127.1 391.7 125.5 448.5C123.9 505.3 121.5 609.833 120.5 655Z" fill="black" stroke="black"/>
+                      <path id="step3" class="path" path d="M62.5 46.5C60.9 49.7 57.8333 53.8333 56.5 55.5L211.5 46.5L128.5 173.5V192.5C141.167 176.667 174.1 136.1 204.5 100.5C234.9 64.9 269.5 46 283 41L475.5 35C474.667 32.8333 472.9 26.7 472.5 19.5C472.1 12.3 474.333 3.5 475.5 0C469.833 1.66667 454.2 5.5 437 7.5C419.8 9.5 368.5 13 345 14.5L64.5 35C64.5 37.5 64.1 43.3 62.5 46.5Z" fill="black" stroke="black"/>
+                      <g id="step4" class="path" path>
+                          <g id="face">
+                              <path id="mouth" d="M445.5 216C447.438 218.29 447.437 218.291 447.436 218.291C447.436 218.292 447.435 218.292 447.435 218.293C447.434 218.293 447.434 218.294 447.433 218.294C447.432 218.295 447.431 218.296 447.43 218.297C447.429 218.297 447.43 218.297 447.432 218.295C447.436 218.292 447.446 218.284 447.462 218.271C447.494 218.245 447.549 218.201 447.627 218.141C447.783 218.02 448.029 217.838 448.356 217.613C449.012 217.162 449.986 216.549 451.217 215.933C453.695 214.694 457.104 213.5 461 213.5V207.5C455.896 207.5 451.555 209.056 448.533 210.567C447.014 211.326 445.801 212.088 444.957 212.669C444.534 212.959 444.201 213.206 443.967 213.387C443.849 213.477 443.756 213.551 443.689 213.606C443.655 213.633 443.627 213.656 443.606 213.673C443.596 213.682 443.587 213.689 443.579 213.695C443.576 213.699 443.572 213.701 443.57 213.704C443.568 213.705 443.567 213.706 443.566 213.707C443.565 213.708 443.564 213.708 443.564 213.709C443.563 213.709 443.562 213.71 445.5 216ZM461 213.5C464.845 213.5 467.384 214.663 468.925 215.722C469.709 216.261 470.257 216.789 470.593 217.159C470.76 217.343 470.874 217.486 470.936 217.569C470.967 217.61 470.985 217.636 470.99 217.644C470.993 217.648 470.993 217.647 470.989 217.642C470.987 217.639 470.985 217.635 470.981 217.63C470.98 217.627 470.978 217.624 470.976 217.621C470.975 217.62 470.974 217.618 470.973 217.616C470.972 217.615 470.971 217.614 470.971 217.613C470.97 217.612 470.969 217.611 473.5 216C476.031 214.389 476.03 214.388 476.029 214.386C476.029 214.386 476.028 214.384 476.027 214.383C476.026 214.381 476.024 214.379 476.023 214.377C476.02 214.372 476.017 214.367 476.014 214.362C476.007 214.352 475.999 214.34 475.99 214.327C475.973 214.301 475.952 214.269 475.927 214.233C475.876 214.16 475.811 214.068 475.728 213.959C475.564 213.74 475.333 213.454 475.032 213.123C474.431 212.461 473.541 211.614 472.325 210.778C469.866 209.088 466.155 207.5 461 207.5V213.5Z" fill="black"/>
+                              <circle id="eye" cx="445" cy="176.5" r="8.5" fill="black"/>
+                              <circle id="eye_2" cx="478" cy="177.5" r="8.5" fill="black"/>
+                          </g>
+                          <path id="head" d="M397.26 185.728C400.474 140.397 437.935 126.055 460.03 125.052L462.5 125.058V138.871C462.5 138.871 448.772 138.871 439 143.5C429.228 148.129 409.876 157.5 408 187C406.696 207.498 412.5 230.433 429.5 239.5C446.5 248.567 484 251.5 503.5 225.5C523 199.5 515.5 168.269 497.5 153.5C479.5 138.731 463 138.871 463 138.871V125.052C463 125.052 466 124.5 477.5 127.5C489 130.5 510.5 143 517.5 160C524.5 177 533.947 206.789 512.254 232.864C490.561 258.94 451.995 257.77 435.424 253.926C421.364 250.081 394.047 231.059 397.26 185.728Z" fill="black" stroke="black" stroke-width="2"/>
+                      </g>
+                      <path id="step5" class="path" path d="M457.5 328C458.3 300.8 452.833 269 450 256.5H466.5C469.5 265.833 476.5 293.2 480.5 328C484.5 362.8 482.167 395.167 480.5 407L454.5 401.5C455.167 388.333 456.7 355.2 457.5 328Z" fill="black" stroke="black"/>
+                      <path id="step6" class="path" path d="M510 479.5C498.8 457.5 484 418.333 478 401.5L482.5 373C490.167 391.333 508.7 434 521.5 458C534.3 482 547.833 503.667 553 511.5C551.167 512.833 546.8 516.1 544 518.5C541.2 520.9 538.167 526.5 537 529C532.667 521.667 521.2 501.5 510 479.5Z" fill="black" stroke="black"/>
+                      <path id="step7" class="path" path d="M405 454.5C425 433.3 447 401 455.5 387.5L459.5 400.5C454.833 409.667 442.1 431.6 434.5 444C420.097 467.5 390.833 501.667 373 523C372.167 520 370.818 513 369 508C367.626 504.222 364.833 500.333 362.5 498.5C368.333 492.667 385 475.7 405 454.5Z" fill="black" stroke="black"/>
+                      <path id="step8" class="path" path d="M517.5 319.5C507.5 313.1 481.333 288.833 469.5 277.5L467 261.5C476 268.833 496.7 285.8 507.5 295C518.3 304.2 562.667 331.833 583.5 344.5C581.5 344.833 576.3 345.8 571.5 347C566.7 348.2 564.167 351.833 563.5 353.5C552.333 344.833 527.5 325.9 517.5 319.5Z" fill="black" stroke="black"/>
+                      <path id="step9" class="path" path d="M399 301C418.6 292.6 443.167 277.167 453 270.5V260C440.833 266.5 414.3 280.5 405.5 284.5C396.7 288.5 347.833 306.167 324.5 314.5C326.833 315 332.3 316.5 335.5 318.5C338.7 320.5 340.5 324 341 325.5C352.167 320.833 379.4 309.4 399 301Z" fill="black" stroke="black"/>
+                      <path id="step10" class="path" path d="M456 92C456.4 74.8 454.833 46.8333 454 35H468C467.333 45.1667 466 68.5 466 80.5C466 92.5 467.333 115.5 468 125.5H454C454.5 121.5 455.6 109.2 456 92Z" fill="black" stroke="black"/>
+                  </g>
+                  <defs>
+                      <clipPath id="clip0">
+                          <rect width="681" height="667" fill="white"/>
+                      </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="game__info">
+                <h3 class="game__title normal border">Dane skazanego</h3>
+                <ul class="game__list">
+                  <li class="game__item"><i class="item__icon fas fa-user-tag"></i>Imię: <span class="item__span" id="js-convicted-name"></span></li>
+                  <li class="game__item"><i class="item__icon fas fa-user-tag"></i>Nazwisko: <span class="item__span" id="js-convicted-surname"></span></li>
+                  <li class="game__item"><i class="item__icon fas fa-hourglass-half" style="padding-right: 9px"></i>Wiek: <span class="item__span" id="js-convicted-age"></span></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Solution Category -->
+            <div class="game__category">
+              <h3 class="game__title normal border mt-5"><span class="title__span-small mr-3">Kategoria: </span> <span id="js-solution-category"></span></h3>
+            </div>
+
+            <!-- Solution -->
+            <div class="game__solution">
+              <h3 class="game__title big" style="text-align: center; word-spacing: 20px;" id="js-solution"></h3>
+            </div>
+
+            <!-- User UI -->
+            <div class="game__user-ui">
+              <div class="game__keyboard">
+                <button class="game__letter" data-letter>A</button>
+                <button class="game__letter" data-letter>Ą</button>
+                <button class="game__letter" data-letter>B</button>
+                <button class="game__letter" data-letter>C</button>
+                <button class="game__letter" data-letter>Ć</button>
+                <button class="game__letter" data-letter>D</button>
+                <button class="game__letter" data-letter>E</button>
+                <button class="game__letter" data-letter>Ę</button>
+                <button class="game__letter" data-letter>F</button>
+                <button class="game__letter" data-letter>G</button>
+                <button class="game__letter" data-letter>H</button>
+                <button class="game__letter" data-letter>I</button>
+                <button class="game__letter" data-letter>J</button>
+                <button class="game__letter" data-letter>K</button>
+                <button class="game__letter" data-letter>L</button>
+                <button class="game__letter" data-letter>Ł</button>
+                <button class="game__letter" data-letter>M</button>
+                <button class="game__letter" data-letter>N</button>
+                <button class="game__letter" data-letter>Ń</button>
+                <button class="game__letter" data-letter>O</button>
+                <button class="game__letter" data-letter>Ó</button>
+                <button class="game__letter" data-letter>P</button>
+                <button class="game__letter" data-letter>Q</button>
+                <button class="game__letter" data-letter>R</button>
+                <button class="game__letter" data-letter>S</button>
+                <button class="game__letter" data-letter>Ś</button>
+                <button class="game__letter" data-letter>T</button>
+                <button class="game__letter" data-letter>U</button>
+                <button class="game__letter" data-letter>V</button>
+                <button class="game__letter" data-letter>W</button>
+                <button class="game__letter" data-letter>X</button>
+                <button class="game__letter" data-letter>Y</button>
+                <button class="game__letter" data-letter>Z</button>
+                <button class="game__letter" data-letter>Ź</button>
+                <button class="game__letter" data-letter>Ż</button>
+              </div>
+              <div class="game__bought-boosters">
+                <ul class="list__bought-boosters" id="js-bought-boosters"></ul>
+                <button class="open-shop-btn" id="js-open-shop-btn"><i class="open-shop-icon fas fa-coins"></i>Sklep</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Shop Screen -->
+        <div class="game__layer layer__shop-screen hidden" id="js-shop-screen">
+          <div class="container" style="max-width: 800px;">
+            <h3 class="game__title big border" style="width: 100%; text-align: center;">Sklep</h3>
+            <ul class="shop__list" id="js-shop-list">
+              <!-- <li class="shop__item">
+                <span class="shop__item-span text">Cofnij się o 1 krok</span>
+                <span class="shop__item-span price">300<i class="icon fas fa-coins"></i></span>
+                <button class="shop__item-btn buy">Kup</button>
+              </li>
+              <li class="shop__item">
+                <span class="shop__item-span text">Cofnij się o 1 krok</span>
+                <span class="shop__item-span price">300<i class="icon fas fa-coins"></i></span>
+                <button class="shop__item-btn buy">Kup</button>
+              </li>
+              <li class="shop__item">
+                <span class="shop__item-span text">Cofnij się o 1 krok</span>
+                <span class="shop__item-span price">300<i class="icon fas fa-coins"></i></span>
+                <button class="shop__item-btn buy">Kup</button>
+              </li>
+              <li class="shop__item">
+                <span class="shop__item-span text">Cofnij się o 1 krok</span>
+                <span class="shop__item-span price">300<i class="icon fas fa-coins"></i></span>
+                <button class="shop__item-btn buy">Kup</button>
+              </li> -->
+            </ul>
+            <button class="game__btn mt-5" id="js-close-shop-btn">Wróć do gry</button>
+          </div>
+        </div>
+
+
+        <!-- Result Screen -->
+        <div class="game__layer layer__result-screen hidden" id="js-result-screen">
+          <div class="container">
+            <!-- Result -->
+            <div class="game__result" style="text-align: center;">
+              <h3 class="game__title big border" id="js-result">Przegrałeś</h3>
+              <h3 class="game__title normal" id="js-result"><span class="title__span-small mr-3">Odpowiedź: </span> <span id="js-result-solution">Ogniem i mieczem</span></h3>
+              <button class="game__btn mt-5" id="js-finish-game-btn">Zakończ grę</button>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="game__tabs tabs" id="js-tabs">
+        <div class="tabs-nav">
+          <div class="tabs-nav__item">Ocaleni<i class="fas fa-heart"></i></div>
+          <div class="tabs-nav__item">Straceni<i class="fas fa-skull"></i></div>
+        </div>
+  
+        <div class="tabs-content">
+          <div class="container container-shrink" id="js-store-town"></div>
+        </div>
+        <div class="tabs-content">
+          <div class="container container-shrink" id="js-store-cemetery"></div>
+        </div>
+      </div>
+    </div>
+    <!----- Game - end ------>
+
+  </div>
+  <!-- MAIN GAME - END -->
+
+
+  <!-- Sweet Alert 2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  <!-- Main JavaScript -->
+  <!-- <script src="src/js/index.js" type="module"></script> -->
+
+</body>
+
+</html>

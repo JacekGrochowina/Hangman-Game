@@ -1,0 +1,27 @@
+.game__btn {
+    position: relative;
+    padding: 15px 25px;
+    background-color: transparent;
+    font-family: map-get($fonts, sans-serif);
+    font-weight: 500;
+    border: 2px solid map-get($colors, dark);
+    z-index: 0;
+    transition: 0.2s color;
+    &:hover {
+        color: map-get($colors, light);
+    }
+    &:hover::before {
+        height: 100%;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        height: 0;
+        background-color: map-get($colors, dark);
+        transition: 0.2s height;
+        z-index: -1;
+    }
+}

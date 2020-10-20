@@ -1,0 +1,6 @@
+.game {
+    min-height: 100vh;
+    background-color: map-get($colors, light);
+    display: flex;
+    flex-direction: row;
+}

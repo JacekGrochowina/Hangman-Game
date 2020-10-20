@@ -1,0 +1,28 @@
+.game__title {
+    font-family: map-get($fonts, serif);
+    font-weight: 700;
+    &.normal {
+        font-size: 1.4rem;
+        padding: 20px;
+        margin-bottom: 20px;
+    }
+    &.small {
+        font-size: 1rem;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    &.big {
+        font-size: 2rem;
+        padding: 20px 30px;
+        margin-bottom: 30px;
+    }
+    &.border {
+        border-bottom: 1px solid lighten(map-get($colors, gray), 15%);
+    }
+    .title__span-small {
+        font-size: 0.7em;
+        font-weight: 400;
+        font-family: map-get($fonts, sans-serif);
+        letter-spacing: 1px;
+    }
+}

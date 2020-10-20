@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="897" height="430" viewBox="0 0 897 430">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="441" height="430" transform="translate(0 0)" fill="#fff"/>
+    </clipPath>
+  </defs>
+  <g id="LOGO" transform="translate(-717 -147)">
+    <text id="Hangman" transform="translate(880 396)" fill="#1d1d1d" font-size="138" font-family="InknutAntiqua-Regular, Inknut Antiqua"><tspan x="0" y="0">Hangman</tspan></text>
+    <g id="hangman-2" data-name="hangman" transform="translate(717 147)" clip-path="url(#clip-path)">
+      <path id="step3" d="M60.376,30.038A39.766,39.766,0,0,1,56.5,35.852l100.128-5.814-53.617,82.04v12.274c8.183-10.228,29.457-36.434,49.1-59.431s41.989-35.206,50.71-38.436L327.169,22.61A36.963,36.963,0,0,1,325.231,12.6,39.289,39.289,0,0,1,327.169,0,168.287,168.287,0,0,1,302.3,4.845c-11.111,1.292-44.25,3.553-59.431,4.522L61.668,22.61C61.668,24.225,61.41,27.971,60.376,30.038Z" transform="translate(-20.002 -0.329)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+      <path id="step2" d="M103.153,427.37H87.65v-133.4c0-22.61-4.2-176.355-6.46-217.375-1.809-32.816-7.214-53.725-9.69-60.077a161.6,161.6,0,0,0,19.057,0c7.235-.517,17.657-3.23,21.964-4.522-1.615,78.7-5.1,245.282-6.137,281.974S103.8,398.193,103.153,427.37Z" transform="translate(-25.312 -4.577)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+      <path id="step1" d="M10.659,645.274C10.4,641.4,3.445,635.476,0,633c16.15,1.83,55.232,5.685,82.364,6.46s62.553-2.476,76.873-4.2c-.646.861-3.036,3.747-7.429,8.4s-1.83,9.259,0,10.982H6.137C7.752,653.134,10.917,649.15,10.659,645.274Z" transform="translate(0 -224.419)" fill="#1d1d1d" stroke="#1d1d1d" stroke-width="1"/>
+    </g>
+  </g>
+</svg>

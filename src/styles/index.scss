@@ -1,0 +1,42 @@
+// ==================================================
+// Inknut Antiqua
+//      Regular: 400
+//      Bold: 700
+// Roboto
+//      Regular: 400
+//      Medium: 500
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@400;700&family=Roboto:wght@400;500&display=swap');
+
+// ==================================================
+// Utlils
+@import './utlils/vars';
+@import './utlils/mixins';
+@import './utlils/spacing';
+
+// ==================================================
+// Base
+@import './base/reset';
+@import './base/default';
+
+// ==================================================
+// Libs
+@import './libs/sweetalert2/sweetalert2';
+
+// ==================================================
+// Components
+@import './components/github';
+@import './components/title';
+@import './components/list';
+@import './components/button';
+// @import './components/hangman';
+
+// ==================================================
+// Templates
+@import './templates/tabs';
+@import './templates/game';
+@import './templates/dashboard';
+@import './templates/container';
+@import './templates/layers';
+@import './templates/start-screen';
+@import './templates/game-screen';
+@import './templates/shop-screen';

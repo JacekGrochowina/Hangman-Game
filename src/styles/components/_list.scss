@@ -1,0 +1,23 @@
+.game__list {
+    margin: 0 20px;
+    font-family: map-get($fonts, sans-serif);
+}
+
+.game__item {
+    margin-bottom: 15px;
+    .item__icon {
+        margin-right: 10px;
+    }
+    .item__span {
+        font-weight: 500;
+        float: right;
+    }
+    .item__btn {
+        @include center;
+        width: 25px;
+        height: 25px;
+        .btn__icon {
+            font-size: 0.8rem;
+        }
+    }
+}

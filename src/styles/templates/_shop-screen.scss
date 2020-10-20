@@ -1,0 +1,45 @@
+.layer__shop-screen {
+
+}
+
+.shop__list {
+    width: 100%;
+}
+
+.shop__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid lighten(map-get($colors, gray), 23%);
+    &:nth-last-of-type(1) {
+        border-bottom: none;
+    }
+    &-span {
+        font-size: 1.05rem;
+        margin-right: 15px;
+        &.text {
+            flex-grow: 1;
+        }
+        &.price {
+            font-size: 1.1em;
+            font-weight: 500;
+            .icon {
+                margin-left: 10px;
+            }
+        }
+    }
+    &-btn {
+        padding: 5px 15px;
+        border: 2px solid map-get($colors, dark);
+        color: map-get($colors, dark);
+        background-color: transparent;
+        transition-property: color, background-color;
+        transition-duration: 0.2s;
+        &:hover {
+            color: map-get($colors, light);
+            background-color: map-get($colors, dark);
+        }
+    }
+}

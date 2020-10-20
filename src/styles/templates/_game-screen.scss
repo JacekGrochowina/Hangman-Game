@@ -1,0 +1,143 @@
+svg#hangman .path {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.25s;
+}
+
+svg#hangman .path.visible {
+    opacity: 1;
+}
+
+.game__hangman {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    @include mq(medium) {
+        flex-direction: column;
+    }
+    .game__svg {
+        width: 50%;
+        @include mq(medium) {
+            width: 100%;
+            order: 2;
+        }
+        svg#hangman {
+            width: 100%;
+            max-width: 400px;
+        }
+    }
+    .game__info {
+        width: 100%;
+        max-width: 300px;
+        @include mq(medium) {
+            margin-bottom: 30px;
+            max-width: 100%;
+            order: 1;
+        }
+    }
+}
+
+.game__category {
+    width: 100%;
+    line-height: 1.4;
+}
+
+.game__solution {
+    width: 100%;
+    line-height: 1.6;
+}
+
+.game__user-ui {
+    display: flex;
+    @include mq(medium) {
+        flex-direction: column;
+    }
+}
+
+.game__keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-right: 20px;
+    @include mq(medium) {
+        margin-right: 0;
+    }
+}
+
+.game__letter {
+    @include center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid darken(map-get($colors, light), 30%);
+    box-shadow: 0 3px 6px rgba(0,0,0,0);
+    font-family: map-get($fonts, serif);
+    cursor: pointer;
+    margin: 5px;
+    transition-property: box-shadow, border-color;
+    transition-duration: 0.15s;
+    &:hover {
+        background-color: darken(map-get($colors, light), 20%);
+    }
+    &[disabled] {
+        background-color: darken(map-get($colors, light), 30%);
+        &:hover {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.game__bought-boosters {
+    height: 144px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    @include mq(medium) {
+        margin: 30px 0;
+        max-width: 100%;
+    }
+}
+
+.list__bought-boosters {
+    padding: 10px;
+    border-top: 1px solid darken(map-get($colors, light), 30%);
+    border-left: 1px solid darken(map-get($colors, light), 30%);
+    border-bottom: 1px solid darken(map-get($colors, light), 30%);
+    font-family: map-get($fonts, sans-serif);
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.item__bought-boosters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-bottom: 1px solid lighten(map-get($colors, gray), 15%);
+    &:nth-last-of-type(1) {
+        border-bottom: none;
+    }
+}
+
+.item__use-btn {
+    font-size: 0.75rem;
+    border: 1px solid map-get($colors, gray);
+    &:hover {
+        background-color: map-get($colors, gray);
+    }
+}
+
+.open-shop-btn {
+    padding: 15px;
+    font-family: map-get($fonts, serif);
+    border: 1px solid darken(map-get($colors, light), 30%);
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    &:hover {
+        color: map-get($colors, light);
+        background-color: map-get($colors, dark);
+    }
+    .open-shop-icon {
+        display: block;
+        font-size: 1.4em;
+    }
+}
