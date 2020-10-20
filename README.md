@@ -12,8 +12,8 @@ Good luck and have fun!
 <br />
 **🌐 My website: http://jacekcv.com/**
 <br />
+<br />
 **❗️❤️ THANKS FOR PLAYING MY GAME ❤️❗️**
-
 <br />
 <br />
 <br />
