@@ -28,7 +28,7 @@ Open file `src/js/data/solutions.js` and add new object to `SOLUTIONS` array.
 export const SOLUTIONS = [
   {
     text: "Text of solution",
-    category: CATEGORIES.FILMS
+    category: CATEGORIES.FILMS  // how to add own categories property below
   },
   // ... other solutions ...
 ]
