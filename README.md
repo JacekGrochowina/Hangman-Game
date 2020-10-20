@@ -7,17 +7,14 @@
 
 Game created in VanillaJS, using ES6, classes and modules. The goal of the game is find a solution by guessing letters. If you win you will get a money and you will save a convicted, but when you lose you will kill him and you will be able to find his grave on cemetery. When you have enought money you can enter the boosters shop and buy one of them. This will make your game easier!
 Good luck and have fun!
-
+<br />
 **🔗🎮 GAME: http://jacekcv.com/projects/hangman/**
-
-
-
-**❗️❤️ THANKS FOR PLAYING MY GAME ❤️❗️**
-
 🌐 My website: http://jacekcv.com/
-
-
-
+<br />
+**❗️❤️ THANKS FOR PLAYING MY GAME ❤️❗️**
+<br />
+<br />
+<br />
 # 📄 Documentation
 
 ### ➕ Add new solution
