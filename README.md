@@ -9,9 +9,12 @@ Game created in VanillaJS, using ES6, classes and modules. The goal of the game 
 Good luck and have fun!
 
 **🔗🎮 GAME: http://jacekcv.com/projects/hangman/**
-🌐 My website: http://jacekcv.com/
+**🌐 My website: http://jacekcv.com/**
+
 <br />
+
 **❗️❤️ THANKS FOR PLAYING MY GAME ❤️❗️**
+
 <br />
 <br />
 <br />
