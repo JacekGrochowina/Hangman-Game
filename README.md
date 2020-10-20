@@ -75,7 +75,7 @@ To run dev-server use command
 ```sh
 npm run start
 ```
-More documentation `webpack-dev-server`: https://webpack.js.org/configuration/dev-server/**
+More documentation `webpack-dev-server`: https://webpack.js.org/configuration/dev-server/
 
 ### Build
 To build your project to production/distribution version use command
