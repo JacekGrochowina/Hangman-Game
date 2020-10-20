@@ -35,10 +35,6 @@ export const SOLUTIONS = [
 ```
 It's all! Your new solution has been added.
 
-```javascript
-
-```
-
 ### ➕ Add new category
 Open file `src/js/data/solutions.js` and add new property to `CATEGORIES` object.
 ```javascript
