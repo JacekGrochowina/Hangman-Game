@@ -11,9 +11,11 @@ Good luck and have fun!
 **🔗🎮 GAME: http://jacekcv.com/projects/hangman/**
 
 -------------
+
 **❗️❤️ THANKS FOR PLAYING MY GAME ❤️❗️**
 
 🌐 My website: http://jacekcv.com/
+
 -------------
 
 # 📄 Documentation
