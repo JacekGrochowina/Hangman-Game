@@ -5,7 +5,14 @@
 
 # Hangman Game 💀⚰️
 
-Game created in VanillaJS, using ES6, classes and modules. The goal of the game is find a solution by guessing letters. If you win you will get a money and you will save a convicted, but when you lose you will kill him and you will be able to find his grave on cemetery. When you have enought money you can enter the boosters shop and buy one of them. This will make your game easier!
+Features:
+- getting info about every convicted from Random User API (https://randomuser.me/)
+- save progress of game in local storage
+- wallet, earn coins and buy boosters from shop
+- shop with boosters
+- turn on/off sound
+- cemetery/town (store), you can see info about executed/survivor convicted
+
 Good luck and have fun!
 <br />
 <br />
