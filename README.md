@@ -42,6 +42,8 @@ export const SOLUTIONS = [
 ```
 It's all! Your new solution has been added.
 
+<br />
+
 ### ➕ Add new category
 Open file `src/js/data/solutions.js` and add new property to `CATEGORIES` object.
 ```javascript
@@ -52,6 +54,7 @@ export const CATEGORIES = {
 ```
 It's all! Your new category has been added. You can use it in `SOLUTIONS` array.
 
+<br />
 
 ## ⚙️ Webpack
 
