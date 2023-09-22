@@ -17,7 +17,7 @@ Good luck and have fun!
 <br />
 <br />
 <br />
-**🔗🎮 GAME: http://jacekcv.com/projects/hangman/**
+**🔗🎮 GAME: [http://jacekcv.com/projects/hangman/](http://projekty.jacekcv.com/hangman/)**
 <br />
 **🌐 My website: http://jacekcv.com/**
 <br />
